@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Game;
-use App\Models\Category;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -25,6 +24,7 @@ class GameController extends Controller
     {    
         $game = new Game;
         $game->name = $request->input('name');
+        $game->category_id = $request->input('category_id');
         $game->save();
         return response()->json($game, 201);
     }
@@ -45,6 +45,7 @@ class GameController extends Controller
     {
         $game = Game::find($id);
         $game->name = $request->input('name');
+        $game->category_id = $request->input('category_id');
         $game->save();
         return response()->json($game);
 

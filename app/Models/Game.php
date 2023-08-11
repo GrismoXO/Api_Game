@@ -10,11 +10,12 @@ class Game extends Model
 {
     protected $fillable = [
         'name',
+        'category_id'
     ];
     use HasFactory;
 
     public function categories()
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

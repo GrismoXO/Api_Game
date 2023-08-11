@@ -24,7 +24,6 @@ class CategoryController extends Controller
     {
         $category = new Category();
         $category->name = $request->input('name');
-        $category->game_id = $request->input('game_id');
         $category->save();
         return response()->json($category, 201);
     }

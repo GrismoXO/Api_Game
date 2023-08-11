@@ -10,7 +10,6 @@ class Category extends Model
 {
     protected $fillable = [
         'name',
-        'game_id'
     ];
     
     use HasFactory;
@@ -19,6 +18,6 @@ class Category extends Model
 
     public function games()
     {
-        return $this->belongsTo(Game::class);
+        return $this->hasMany(Game::class);
     }
 }

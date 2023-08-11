@@ -20,6 +20,7 @@ class GameFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'category_id'=> $this->faker->create(['category_id'])
         ];
     }
 }
